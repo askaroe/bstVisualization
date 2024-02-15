@@ -1,4 +1,3 @@
-
 class Node {
     constructor(value) {
         this.value = value;
@@ -109,9 +108,10 @@ const bst = new BinarySearchTree();
 
 const addButton = document.getElementById("btnAdd");
 addButton.addEventListener("click", () => {
-    const value = parseInt(document.getElementById("numberInput").value);
-    if (!isNaN(value)) {
-        bst.add(value);
-        numberInput.value = "";
+    const numbersInput = document.getElementById("numbersInput").value;
+    const numbersArray = numbersInput.split(",").map(Number);
+    for (const number of numbersArray) {
+        bst.add(number);
     }
+    numbersInput.value = "";
 });
